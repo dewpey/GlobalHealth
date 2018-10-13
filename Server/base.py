@@ -50,7 +50,8 @@ The maximum age for the final dose is 8 months, 0 days.
 For other catch–up guidance, see catch–up schedule.
 """
 
-"Diphtheria : [tetanus, & acellular pertussis", "DTaP","IM","CH"],
+"Diphtheria" : [
+"tetanus, & acellular pertussis", "DTaP","IM","CH"],
 """
 Routine vaccination:
 
@@ -182,7 +183,7 @@ Only trivalent OPV (tOPV) counts toward the U.S. vaccination requirements. For g
 For other catch–up guidance, see catch–up schedule.
 """
 
-"Influenza" : [IIV","IM","CH"],
+"Influenza" : ["IIV","IM","CH"],
 """
 Influenza vaccines. (minimum age: 6 months)Routine vaccination:
 Administer an age-appropriate formulation and dose of influenza vaccine annually.
@@ -313,7 +314,7 @@ Pregnancy: Vaccination not recommended, but there is no evidence the vaccine is 
 *See MMWR, December 16, 2016;65(49):1405–1408, at www.cdc.gov/mmwr/volumes/65/wr/pdfs/mm6549a5.pdf[4 pages].
 """
 
-("Meningococcal B", None,"IM"),
+"Meningococcal B" : [None,"IM","CH"],
 """
 Serogroup B meningococcal vaccines (minimum age: 10 years [Bexsero, Trumenba].Clinical discretion: Adolescents not at increased risk for meningococcal B infection who want MenB vaccine.MenB vaccines may be given at clinical discretion to adolescents 16–23 years (preferred age 16–18 years) who are not at increased risk.
 Bexsero: 2 doses at least 1 month apart.
@@ -328,7 +329,7 @@ Note: Bexsero and Trumenba are not interchangeable.
 
 For additional meningococcal vaccination information, see meningococcal MMWR publications at: www.cdc.gov/vaccines/hcp/acip-recs/vacc-specific/mening.html.
 """
-"Pneumococcal polysaccharide": ["PPSV23","IM"."CH"],
+"Pneumococcal polysaccharide": ["PPSV23","IM","CH",
 """
 Pneumococcal vaccines. (minimum age: 6 weeks [PCV13], 2 years [PPSV23])
 Routine vaccination:
@@ -413,4 +414,3 @@ api.add_resource(doRotation, '/doRotation')
 api.add_resource(getBearing, '/getBearing')
 if __name__ == '__main__':
     app.run(debug=True, port=3002)
-

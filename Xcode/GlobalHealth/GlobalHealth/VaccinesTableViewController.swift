@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class MasterViewControllerCell: UITableViewCell{
 
+    @IBOutlet weak var nameLabel: UILabel!
 }
 
 class Vaccine {
@@ -34,7 +35,7 @@ class VaccinesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadData()
+        //loadData()
         loadMockData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -101,8 +102,11 @@ class VaccinesTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "vaccineCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "vaccineCell", for: indexPath) as! MasterViewControllerCell
 
+        let item = self.vaccines[indexPath.row]
+        
+        cell.nameLabel.text = item.name
         // Configure the cell...
 
         return cell

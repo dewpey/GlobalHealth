@@ -1,3 +1,4 @@
+# coding: utf-8
 from flask import Flask, request
 from flask_restful import Resource, Api
 
@@ -7,11 +8,11 @@ api = Api(app)
 data = 0
 
 valid_vaccine_list = {
-"Hepatitis B1" : ["HepB","IM","CH"] ,
+"Hepatitis B1" : ["HepB","IM","CH",
 """
 Birth Dose (monovalent HepB vaccine only):
 
-Mother is HBsAg-negative: 1 dose within 24 hours of birth for medically stable infants ≥2,000 grams. Infants <2,000 grams administer 1 dose at chronological age 1 month or hospital discharge.
+Mother is HBsAg-negative: 1 dose within 24 hours of birth for medically stable infants >2,000 grams. Infants <2,000 grams administer 1 dose at chronological age 1 month or hospital discharge.
 Mother is HBsAg-positive:
 Give 1 dose HepB vaccine and 0.5 mL of HBIG (at separate anatomic sites) within 12 hours of birth, regardless of birth weight.
 Test for HBsAg and anti-HBs at age 9–12 months. If HepB series is delayed, test 1–2 months after final dose.
@@ -32,7 +33,7 @@ Unvaccinated persons should complete a 3-dose series at 0, 1–2, and 6 months.
 Adolescents 11–15 years of age may use an alternative 2-dose schedule, with at least 4 months between doses (adult formulation Recombivax HB only).
 For other catch–up guidance, see catch–up schedule.
 """
-
+]
 
 "Rotavirus" : ["RV1","IM","CH",
 
@@ -51,7 +52,7 @@ For other catch–up guidance, see catch–up schedule.
 """
 ]
 
-"Diphtheria : [tetanus, & acellular pertussis", "DTaP","IM","CH",
+"Diphtheria" : ["tetanus, & acellular pertussis", "DTaP","IM","CH",
 """
 Routine vaccination:
 

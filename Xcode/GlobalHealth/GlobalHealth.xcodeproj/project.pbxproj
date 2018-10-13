@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D197CB92171AEA80018BBF8 /* RecordScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D197CB82171AEA80018BBF8 /* RecordScannerViewController.swift */; };
 		0D64FA8221719DEC0060D97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA8121719DEC0060D97F /* AppDelegate.swift */; };
 		0D64FA8421719DEC0060D97F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA8321719DEC0060D97F /* ViewController.swift */; };
 		0D64FA8721719DEC0060D97F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D64FA8521719DEC0060D97F /* Main.storyboard */; };
 		0D64FA8921719DED0060D97F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D64FA8821719DED0060D97F /* Assets.xcassets */; };
 		0D64FA8C21719DED0060D97F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D64FA8A21719DED0060D97F /* LaunchScreen.storyboard */; };
+		30153FBB4B7656BCA65C887E /* Pods_GlobalHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70CDF39ABEF6D8522505F3A /* Pods_GlobalHealth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D197CB82171AEA80018BBF8 /* RecordScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordScannerViewController.swift; sourceTree = "<group>"; };
 		0D64FA7E21719DEC0060D97F /* GlobalHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D64FA8121719DEC0060D97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D64FA8321719DEC0060D97F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		0D64FA8821719DED0060D97F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D64FA8B21719DED0060D97F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D64FA8D21719DED0060D97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		573880FEF4FA4F0B878F185F /* Pods-GlobalHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalHealth/Pods-GlobalHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		B6CC04544799FC64AA164A47 /* Pods-GlobalHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalHealth/Pods-GlobalHealth.release.xcconfig"; sourceTree = "<group>"; };
+		C70CDF39ABEF6D8522505F3A /* Pods_GlobalHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobalHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30153FBB4B7656BCA65C887E /* Pods_GlobalHealth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				0D64FA8021719DEC0060D97F /* GlobalHealth */,
 				0D64FA7F21719DEC0060D97F /* Products */,
+				9B60B97DCD347BBE8408CB8E /* Pods */,
+				A31FB9802E3EB91B4CC76D3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +69,26 @@
 				0D64FA8821719DED0060D97F /* Assets.xcassets */,
 				0D64FA8A21719DED0060D97F /* LaunchScreen.storyboard */,
 				0D64FA8D21719DED0060D97F /* Info.plist */,
+				0D197CB82171AEA80018BBF8 /* RecordScannerViewController.swift */,
 			);
 			path = GlobalHealth;
+			sourceTree = "<group>";
+		};
+		9B60B97DCD347BBE8408CB8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				573880FEF4FA4F0B878F185F /* Pods-GlobalHealth.debug.xcconfig */,
+				B6CC04544799FC64AA164A47 /* Pods-GlobalHealth.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A31FB9802E3EB91B4CC76D3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C70CDF39ABEF6D8522505F3A /* Pods_GlobalHealth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D64FA9021719DED0060D97F /* Build configuration list for PBXNativeTarget "GlobalHealth" */;
 			buildPhases = (
+				519482B115B2B693B1D0A2AD /* [CP] Check Pods Manifest.lock */,
 				0D64FA7A21719DEC0060D97F /* Sources */,
 				0D64FA7B21719DEC0060D97F /* Frameworks */,
 				0D64FA7C21719DEC0060D97F /* Resources */,
+				C4A491FDE62BDCA46B845083 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,11 +159,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		519482B115B2B693B1D0A2AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GlobalHealth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4A491FDE62BDCA46B845083 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GlobalHealth/Pods-GlobalHealth-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyButton.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GlobalHealth/Pods-GlobalHealth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D64FA7A21719DEC0060D97F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D197CB92171AEA80018BBF8 /* RecordScannerViewController.swift in Sources */,
 				0D64FA8421719DEC0060D97F /* ViewController.swift in Sources */,
 				0D64FA8221719DEC0060D97F /* AppDelegate.swift in Sources */,
 			);
@@ -280,6 +349,7 @@
 		};
 		0D64FA9121719DED0060D97F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 573880FEF4FA4F0B878F185F /* Pods-GlobalHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +368,7 @@
 		};
 		0D64FA9221719DED0060D97F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6CC04544799FC64AA164A47 /* Pods-GlobalHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

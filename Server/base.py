@@ -5,10 +5,7 @@ from medicaid import Person
 app = Flask(__name__)
 api = Api(app)
 
-parser = reqparse.RequestParser()
-parser.add_argument('rate', type=int, help='Rate cannot be converted')
-parser.add_argument('name')
-args = parser.parse_args()
+
 
 class getEligibility(Resource):
     def get(self):

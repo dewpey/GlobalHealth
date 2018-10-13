@@ -132,6 +132,8 @@ class RecordScannerViewController: UIViewController {
         
         imageView.layer.addSublayer(outline)
     }
+    
+    
 }
 
 extension RecordScannerViewController: AVCaptureVideoDataOutputSampleBufferDelegate {

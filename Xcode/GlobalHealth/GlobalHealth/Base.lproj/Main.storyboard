@@ -451,6 +451,9 @@ new healthcare systems.</string>
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="cWA-qd-blN" kind="show" id="8Mw-mV-Z4M"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -485,9 +488,16 @@ new healthcare systems.</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kjN-dc-Hsh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="th8-1W-OeQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="th8-1W-OeQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -497,6 +507,135 @@ new healthcare systems.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ru-Sw-ahf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1303" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uzQ-rl-xLn">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="cWA-qd-blN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jkM-T3-COi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ge-Sm-1nV" customClass="FlatButton" customModule="SwiftyButton">
+                                <rect key="frame" x="40" y="722" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="RDA-lA-70n"/>
+                                    <constraint firstAttribute="height" constant="50" id="VPD-3r-ZhL"/>
+                                    <constraint firstAttribute="width" constant="295" id="hL1-8C-gK4"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.16078431369999999" green="0.49019607840000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccination Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4S8-DA-txW">
+                                <rect key="frame" x="39.5" y="87" width="296" height="37"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDQ-Ui-4pT">
+                                <rect key="frame" x="107" y="694" width="175" height="30"/>
+                                <state key="normal" title="Manually enter a record..."/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXq-bv-1yb" customClass="FlatButton" customModule="SwiftyButton">
+                                <rect key="frame" x="40" y="597" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="295" id="Zfg-BL-bUo"/>
+                                    <constraint firstAttribute="height" constant="50" id="glO-Lq-qmg"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="vqG-xL-Vsf"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.16078431369999999" green="0.49019607840000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84c-vh-uXW">
+                                <rect key="frame" x="16" y="129" width="343" height="450"/>
+                                <connections>
+                                    <segue destination="m9Q-cP-Blk" kind="embed" id="G1k-YC-urA"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bXq-bv-1yb" firstAttribute="top" secondItem="84c-vh-uXW" secondAttribute="bottom" constant="18" id="31h-73-qhH"/>
+                            <constraint firstItem="0ge-Sm-1nV" firstAttribute="top" secondItem="tDQ-Ui-4pT" secondAttribute="bottom" constant="-2" id="96o-fU-A8z"/>
+                            <constraint firstItem="84c-vh-uXW" firstAttribute="top" secondItem="jkM-T3-COi" secondAttribute="top" constant="129" id="Coc-EH-gjC"/>
+                            <constraint firstItem="0ge-Sm-1nV" firstAttribute="centerX" secondItem="jkM-T3-COi" secondAttribute="centerX" id="QlC-PF-D1q"/>
+                            <constraint firstItem="84c-vh-uXW" firstAttribute="centerX" secondItem="4S8-DA-txW" secondAttribute="centerX" id="TOi-CS-SCa"/>
+                            <constraint firstItem="bXq-bv-1yb" firstAttribute="centerX" secondItem="4S8-DA-txW" secondAttribute="centerX" id="VNj-Pm-jAl"/>
+                            <constraint firstItem="tDQ-Ui-4pT" firstAttribute="leading" secondItem="tHO-57-Tqg" secondAttribute="leading" constant="107" id="Yyg-BY-TG4"/>
+                            <constraint firstItem="84c-vh-uXW" firstAttribute="top" secondItem="4S8-DA-txW" secondAttribute="bottom" constant="5" id="fQ5-Jx-dK3"/>
+                            <constraint firstItem="bXq-bv-1yb" firstAttribute="leading" secondItem="0ge-Sm-1nV" secondAttribute="leading" id="iPI-wZ-G9S"/>
+                            <constraint firstAttribute="bottom" secondItem="bXq-bv-1yb" secondAttribute="bottom" constant="20" symbolic="YES" id="ojS-nP-4sY"/>
+                            <constraint firstItem="84c-vh-uXW" firstAttribute="leading" secondItem="jkM-T3-COi" secondAttribute="leadingMargin" id="xhd-hM-G9F"/>
+                            <constraint firstItem="tHO-57-Tqg" firstAttribute="bottom" secondItem="0ge-Sm-1nV" secondAttribute="bottom" constant="-105" id="yRD-xK-8Lz"/>
+                            <constraint firstItem="0ge-Sm-1nV" firstAttribute="leading" secondItem="tHO-57-Tqg" secondAttribute="leading" constant="40" id="zL4-8U-Z7H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tHO-57-Tqg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2s-Bd-f2A" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4432.8000000000002" y="132.68365817091455"/>
+        </scene>
+        <!--Vaccines Table View Controller-->
+        <scene sceneID="eAi-AX-CZD">
+            <objects>
+                <tableViewController id="m9Q-cP-Blk" customClass="VaccinesTableViewController" customModule="GlobalHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Muv-Zb-lhr">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="vaccineCell" rowHeight="100" id="Ncu-zo-Cfy" customClass="MasterViewControllerCell" customModule="GlobalHealth" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ncu-zo-Cfy" id="GtB-pC-XyL">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="m9Q-cP-Blk" id="dA4-Jo-rYA"/>
+                            <outlet property="delegate" destination="m9Q-cP-Blk" id="k4b-Oj-AkR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S8e-JD-mTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5172" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ECJ-xX-Grg">
+            <objects>
+                <viewController id="ycR-5W-nlm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aAe-vv-Krl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fHK-SN-R2U"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZ9-PO-szU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="-678"/>
         </scene>
     </scenes>
     <resources>

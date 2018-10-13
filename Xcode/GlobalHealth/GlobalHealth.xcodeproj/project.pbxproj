@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D197CB92171AEA80018BBF8 /* RecordScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D197CB82171AEA80018BBF8 /* RecordScannerViewController.swift */; };
+		0D197CBB2171BCB10018BBF8 /* RecordScannerNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D197CBA2171BCB10018BBF8 /* RecordScannerNewViewController.swift */; };
+		0D197CBD2171C5B10018BBF8 /* undraw_children_4rtb.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0D197CBC2171C5B10018BBF8 /* undraw_children_4rtb.svg */; };
 		0D64FA8221719DEC0060D97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA8121719DEC0060D97F /* AppDelegate.swift */; };
 		0D64FA8421719DEC0060D97F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA8321719DEC0060D97F /* ViewController.swift */; };
 		0D64FA8721719DEC0060D97F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D64FA8521719DEC0060D97F /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		0D197CB82171AEA80018BBF8 /* RecordScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordScannerViewController.swift; sourceTree = "<group>"; };
+		0D197CBA2171BCB10018BBF8 /* RecordScannerNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordScannerNewViewController.swift; sourceTree = "<group>"; };
+		0D197CBC2171C5B10018BBF8 /* undraw_children_4rtb.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = undraw_children_4rtb.svg; sourceTree = "<group>"; };
 		0D64FA7E21719DEC0060D97F /* GlobalHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D64FA8121719DEC0060D97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D64FA8321719DEC0060D97F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,9 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				0D64FA8121719DEC0060D97F /* AppDelegate.swift */,
+				0D197CBA2171BCB10018BBF8 /* RecordScannerNewViewController.swift */,
 				0D64FA8321719DEC0060D97F /* ViewController.swift */,
 				0D64FA8521719DEC0060D97F /* Main.storyboard */,
 				0D64FA8821719DED0060D97F /* Assets.xcassets */,
+				0D197CBC2171C5B10018BBF8 /* undraw_children_4rtb.svg */,
 				0D64FA8A21719DED0060D97F /* LaunchScreen.storyboard */,
 				0D64FA8D21719DED0060D97F /* Info.plist */,
 				0D197CB82171AEA80018BBF8 /* RecordScannerViewController.swift */,
@@ -153,6 +159,7 @@
 			files = (
 				0D64FA8C21719DED0060D97F /* LaunchScreen.storyboard in Resources */,
 				0D64FA8921719DED0060D97F /* Assets.xcassets in Resources */,
+				0D197CBD2171C5B10018BBF8 /* undraw_children_4rtb.svg in Resources */,
 				0D64FA8721719DEC0060D97F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D197CB92171AEA80018BBF8 /* RecordScannerViewController.swift in Sources */,
+				0D197CBB2171BCB10018BBF8 /* RecordScannerNewViewController.swift in Sources */,
 				0D64FA8421719DEC0060D97F /* ViewController.swift in Sources */,
 				0D64FA8221719DEC0060D97F /* AppDelegate.swift in Sources */,
 			);

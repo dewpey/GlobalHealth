@@ -1,3 +1,4 @@
+# coding: utf-8
 from flask import Flask, request
 from flask_restful import Resource, Api, reqparse
 from medicaid import Person

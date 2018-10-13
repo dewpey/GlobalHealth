@@ -16,7 +16,7 @@ class getEligibility(Resource):
         state = request.args.get('state')
         income = request.args.get('income')
         pregnancy = request.args.get('pregnancy')
-        p1 = Person(familySize, state, income, pregnancy)
+        p1 = Person(int(familySize), state, float(income), int(pregnancy))
         return {
             'familySize': familySize,
             'state': state,

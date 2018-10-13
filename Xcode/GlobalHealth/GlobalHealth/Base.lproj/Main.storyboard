@@ -529,7 +529,7 @@ new healthcare systems.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ge-Sm-1nV" customClass="FlatButton" customModule="SwiftyButton">
-                                <rect key="frame" x="40" y="722" width="295" height="50"/>
+                                <rect key="frame" x="40" y="678" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="RDA-lA-70n"/>
                                     <constraint firstAttribute="height" constant="50" id="VPD-3r-ZhL"/>
@@ -554,7 +554,7 @@ new healthcare systems.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDQ-Ui-4pT">
-                                <rect key="frame" x="107" y="694" width="175" height="30"/>
+                                <rect key="frame" x="107" y="650" width="175" height="30"/>
                                 <state key="normal" title="Manually enter a record..."/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXq-bv-1yb" customClass="FlatButton" customModule="SwiftyButton">
@@ -575,6 +575,9 @@ new healthcare systems.</string>
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="mqW-W4-GIp" kind="show" id="PPC-d2-fUv"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84c-vh-uXW">
                                 <rect key="frame" x="16" y="129" width="343" height="450"/>
@@ -601,6 +604,10 @@ new healthcare systems.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tHO-57-Tqg"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="T62-2H-Ecf"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2s-Bd-f2A" sceneMemberID="firstResponder"/>
             </objects>
@@ -648,11 +655,12 @@ new healthcare systems.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8e-JD-mTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5172" y="132.23388305847078"/>
+            <point key="canvasLocation" x="4433" y="-443"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="uFW-FT-eYU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCU-6B-ypF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="mqW-W4-GIp" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rOW-Vx-qTk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -730,10 +738,27 @@ new healthcare systems.</string>
                             <outlet property="delegate" destination="mqW-W4-GIp" id="31H-lI-hlR"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="9sT-me-Kys">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="i2D-on-PgQ"/>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QCU-6B-ypF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5828" y="133"/>
+            <point key="canvasLocation" x="5198" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="irP-pM-bFf">
+            <objects>
+                <viewController id="jB8-jf-ZIY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4jP-Dm-DbZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1jE-42-8e1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HeQ-3r-cXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5969" y="133"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ECJ-xX-Grg">

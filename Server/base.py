@@ -1,28 +1,31 @@
 from flask import Flask, request
-from flask_restful import Resource, Api
+from flask_restful import Resource, Api, reqparse
+from medicaid import Person
 
 app = Flask(__name__)
 api = Api(app)
 
-data = 0
+parser = reqparse.RequestParser()
+parser.add_argument('rate', type=int, help='Rate cannot be converted')
+parser.add_argument('name')
+args = parser.parse_args()
 
-class doRotation(Resource):
+class getEligibility(Resource):
     def get(self):
-        bearing = request.args.get('bearing')
-        speed = request.args.get('speed')
-        data = bearing
+        familySize = request.args.get('familySize')
+        state = request.args.get('state')
+        income = request.args.get('income')
+        pregnancy = request.args.get('pregnancy')
+        p1 = Person(familySize, state, income, pregnancy)
         return {
-            'bearing': bearing,
-            'speed': speed,
+            'familySize': familySize,
+            'state': state,
+            'income': income,
+           'pregnancy': pregnancy,
+            'expandedAdult': str(p1.expanded_medicaid_eligibility()),
+            'chip': str(p1.chip_eligibility()),
+            'PregnantAdult': str(p1.pregnant_eligibility()),
             }
-class getBearing(Resource):
-    def get(self):
-        return {
-            'bearing': currentBearing,
-            }
-
-api.add_resource(doMovement, '/doMovement')
-api.add_resource(doRotation, '/doRotation')
-api.add_resource(getBearing, '/getBearing')
+api.add_resource(getEligibility, '/getEligibility')
 if __name__ == '__main__':
-    app.run(debug=True, port=3002)
+    app.run(debug=True, port=3011)

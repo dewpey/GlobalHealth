@@ -6,8 +6,8 @@ api = Api(app)
 
 data = 0
 
-valid_vaccine_list = {
-"Hepatitis B1" : ["HepB","IM","CH"] ,
+valid_vaccine_dict = {
+"Hepatitis B1" : ["HepB","IM","CH",
 """
 Birth Dose (monovalent HepB vaccine only):
 
@@ -32,13 +32,13 @@ Unvaccinated persons should complete a 3-dose series at 0, 1–2, and 6 months.
 Adolescents 11–15 years of age may use an alternative 2-dose schedule, with at least 4 months between doses (adult formulation Recombivax HB only).
 For other catch–up guidance, see catch–up schedule.
 """
-
-
+]
+,
 "Rotavirus" : ["RV1","IM","CH",
 
 """
-Rotavirus vaccines. (minimum age: 6 weeks)
-Routine vaccination:
+Rotavirus vaccines. (minimum age: 6 weeks) Routine vaccination:
+
 
 Rotarix: 2-dose series at 2 and 4 months.
 RotaTeq: 3-dose series at 2, 4, and 6 months.
@@ -50,8 +50,8 @@ The maximum age for the final dose is 8 months, 0 days.
 For other catch–up guidance, see catch–up schedule.
 """
 ]
-
-"Diphtheria : [tetanus, & acellular pertussis", "DTaP","IM","CH",
+,
+"Diphtheria" : ["tetanus, & acellular pertussis", "DTaP","IM","CH",
 """
 Routine vaccination:
 
@@ -64,7 +64,7 @@ The 5th dose is not necessary if the 4th dose was administered at 4 years or old
 For other catch–up guidance, see catch–up schedule.
 """
 ]
-
+,
 "Haemophilus influenzae type b" : ["Hib","IM","CH",
 """
 Haemophilus influenzae type b (Hib) conjugate vaccines. (minimum age: 6 weeks)
@@ -112,7 +112,7 @@ Unvaccinated or only 1 dose before 12 months: Give 2 doses, 8 weeks apart.
 *Unimmunized = less than routine series (through 14 months) OR no doses (14 months or older)
 """
 ]
-
+,
 "Pneumococcal conjugate": ["PCV13","IM","CH",
 """
 Pneumococcal vaccines. (minimum age: 6 weeks [PCV13], 2 years [PPSV23])
@@ -166,7 +166,7 @@ No history of PPSV23: 1 dose of PPSV23 (at least 8 weeks after any prior PCV13 d
 *Incomplete schedules are any schedules where PCV13 doses have not been completed according to ACIP recommended catch-up schedules. The total number and timing of doses for complete PCV13 series are dictated by the age at first vaccination. See Tables 8 and 9 in the ACIP pneumococcal vaccine recommendations (www.cdc.gov/mmwr/pdf/rr/rr5911.pdf[24 pages]) for complete schedule details.
 """
 ]
-
+,
 "Inactivated poliovirus": ["IPV","IM","CH",
 """
 Inactivated poliovirus vaccine (IPV). (minimum age: 6 weeks)
@@ -186,8 +186,8 @@ Only trivalent OPV (tOPV) counts toward the U.S. vaccination requirements. For g
 For other catch–up guidance, see catch–up schedule.
 """
 ]
-
-"Influenza" : [IIV","IM","CH",
+,
+"Influenza" : ["IIV","IM","CH",
 """
 Influenza vaccines. (minimum age: 6 months)Routine vaccination:
 Administer an age-appropriate formulation and dose of influenza vaccine annually.
@@ -198,8 +198,8 @@ For additional guidance, see the 2017–18 ACIP influenza vaccine recommendation
 (For the 2018–19 season, see the 2018–19 ACIP influenza vaccine recommendations.)
 """
 ]
-
-"Measles, mumps, rubella": ["MMR","IM","CH",
+,
+"Measles_mumps_rubella": ["MMR","IM","CH",
 """
 Routine vaccination:
 
@@ -216,7 +216,7 @@ Mumps outbreak:
 Persons ≥12 months who previously received ≤2 doses of mumps-containing vaccine and are identified by public health authorities to be at increased risk during a mumps outbreak should receive a dose of mumps-virus containing vaccine.
 """
 ]
-
+,
 "Varicella" : ["VAR","IM","CH",
 """
 Routine vaccination:
@@ -230,6 +230,7 @@ Ages 7–12 years: routine interval 3 months (minimum interval: 4 weeks).
 Ages 13 years and older: minimum interval 4 weeks.
 """
 ]
+,
 "Hepatitis A": ["HepA","IM",'CH',
 """
 Routine vaccination:
@@ -251,6 +252,7 @@ Persons with chronic liver disease
 Persons who anticipate close, personal contact (e.g., household or regular babysitting) with an international adoptee during the first 60 days after arrival in the United States from a country with high or intermediate endemicity (administer the 1st dose as soon as the adoption is planned-ideally at least 2 weeks before the adoptee’s arrival)
 """
 ]
+,
 "Meningococca" : ["MenACWY-D","IM","CH",
 """
 Routine:
@@ -287,6 +289,7 @@ Children 2 years or older: 1 dose of Menveo or Menactra.
 Note: Menactra should be given either before or at the same time as DTaP. For MenACWY booster dose recommendations for groups listed under “Special populations and situations” above, and additional meningococcal vaccination information, see meningococcal MMWR publications at: www.cdc.gov/vaccines/hcp/acip-recs/vacc-specific/mening.html.
 """
 ]
+,
 "Tetanus, diphtheria, & acellular pertussis" : ["Tdap","IM","CH",
 """
 Tetanus, diphtheria, and acellular pertussis (Tdap) vaccine. (minimum age: 11 years for routine vaccinations, 7 years for catch-up vaccination)
@@ -306,6 +309,7 @@ Adolescents 11–18 years: Count dose of DTaP as the adolescent Tdap booster.
 For other catch–up guidance, see catch–up schedule.
 """
 ]
+,
 "Human papillomavirus" : ["HPV","IM","CH",
 """
 Routine and catch-up vaccination:
@@ -322,6 +326,7 @@ Pregnancy: Vaccination not recommended, but there is no evidence the vaccine is 
 *See MMWR, December 16, 2016;65(49):1405–1408, at www.cdc.gov/mmwr/volumes/65/wr/pdfs/mm6549a5.pdf[4 pages].
 """
 ]
+,
 "Meningococcal B" :[None,"IM","CH",
 """
 Serogroup B meningococcal vaccines (minimum age: 10 years [Bexsero, Trumenba].Clinical discretion: Adolescents not at increased risk for meningococcal B infection who want MenB vaccine.MenB vaccines may be given at clinical discretion to adolescents 16–23 years (preferred age 16–18 years) who are not at increased risk.
@@ -337,7 +342,9 @@ Note: Bexsero and Trumenba are not interchangeable.
 
 For additional meningococcal vaccination information, see meningococcal MMWR publications at: www.cdc.gov/vaccines/hcp/acip-recs/vacc-specific/mening.html.
 """
-"Pneumococcal polysaccharide": ["PPSV23","IM"."CH"],
+]
+,
+"Pneumococcal polysaccharide": ["PPSV23","IM","CH",
 """
 Pneumococcal vaccines. (minimum age: 6 weeks [PCV13], 2 years [PPSV23])
 Routine vaccination:
@@ -396,13 +403,14 @@ No history of PPSV23: 1 dose of PPSV23 (at least 8 weeks after any prior PCV13 d
 @app.route('/api/add_message/<uuid>', methods=['POST'])
 class tierion_post:
     def post(self, uuid):
-
+        '''
         tierion = {
             X-Username: "blurjor@gmail.com"
             X-Api-Key:  "X0dvxIiNXXq5k7RBNYDmPrVoxEeJ+Y+umsUMS7FcgWk"
             client-secret: "aa5438d3159a9b2e82d78c74e44cba8516edbf23"
             datastore id: "1082"
         }
+        '''
         content = request.get_json(silent=True)
         return jsonify({"uuid":uuid})
 
@@ -417,8 +425,6 @@ class getBearing(Resource):
             'bearing': currentBearing,
             }
 '''
-api.add_resource(doMovement, '/doMovement')
-api.add_resource(doRotation, '/doRotation')
-api.add_resource(getBearing, '/getBearing')
+
 if __name__ == '__main__':
     app.run(debug=True, port=3002)

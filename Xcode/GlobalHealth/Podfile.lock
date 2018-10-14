@@ -1,28 +1,50 @@
 PODS:
   - Alamofire (4.7.3)
   - FoldingCell (4.0.1)
+  - Realm (3.11.0):
+    - Realm/Headers (= 3.11.0)
+  - Realm/Headers (3.11.0)
+  - RealmSwift (3.11.0):
+    - Realm (= 3.11.0)
+  - Socket.IO-Client-Swift (13.3.1):
+    - Starscream (~> 3.0.2)
+  - Starscream (3.0.6)
   - SwiftyButton (0.8.2)
   - SwiftyJSON (4.2.0)
+  - TwilioVoice (3.0.0-preview4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - FoldingCell
+  - RealmSwift
+  - Socket.IO-Client-Swift (~> 13.3.0)
   - SwiftyButton
   - SwiftyJSON (~> 4.0)
+  - TwilioVoice (= 3.0.0-preview4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - FoldingCell
+    - Realm
+    - RealmSwift
+    - Socket.IO-Client-Swift
+    - Starscream
     - SwiftyButton
     - SwiftyJSON
+    - TwilioVoice
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   FoldingCell: acf29a96085b7ab96234be75d543f5640ead0b3c
+  Realm: 92f09a102692b96a9a10e9617f214f15c5ab85fc
+  RealmSwift: 5f0481cd658bb751c509314b964a35eaa264d2cf
+  Socket.IO-Client-Swift: 79f8f85fa44881838175a20f9bd2c32bef2c9d37
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  TwilioVoice: 79fbc2573ef392a3a815875ad509ebfdb923ca5a
 
-PODFILE CHECKSUM: 58cad017f145da1f00d90dc1b563a95ccf508f02
+PODFILE CHECKSUM: 7dd4e0ee9aee877df1383da185d1534068b401a0
 
 COCOAPODS: 1.5.3

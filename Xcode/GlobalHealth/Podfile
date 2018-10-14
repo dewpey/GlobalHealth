@@ -8,6 +8,9 @@ target 'GlobalHealth' do
     pod 'Alamofire', '~> 4.7'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'FoldingCell'
+    pod 'TwilioVoice', '3.0.0-preview4'
+    pod 'RealmSwift'
+    pod 'Socket.IO-Client-Swift', '~> 13.3.0'
   # Pods for GlobalHealth
 
 end

@@ -108,7 +108,6 @@ class VaccinesTableViewController: UITableViewController {
         
         cell.nameLabel.text = item.name
         // Configure the cell...
-
         return cell
     }
 

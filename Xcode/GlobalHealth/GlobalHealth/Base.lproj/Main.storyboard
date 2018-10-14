@@ -604,9 +604,7 @@ new healthcare systems.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tHO-57-Tqg"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="T62-2H-Ecf"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2s-Bd-f2A" sceneMemberID="firstResponder"/>
@@ -660,7 +658,6 @@ new healthcare systems.</string>
         <!--Table View Controller-->
         <scene sceneID="uFW-FT-eYU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QCU-6B-ypF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="mqW-W4-GIp" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rOW-Vx-qTk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -739,9 +736,14 @@ new healthcare systems.</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="9sT-me-Kys">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="i2D-on-PgQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="i2D-on-PgQ">
+                            <connections>
+                                <segue destination="jB8-jf-ZIY" kind="show" id="qPV-Eb-Keo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCU-6B-ypF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5198" y="133"/>
         </scene>
@@ -749,16 +751,213 @@ new healthcare systems.</string>
         <scene sceneID="irP-pM-bFf">
             <objects>
                 <viewController id="jB8-jf-ZIY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4jP-Dm-DbZ">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cm5-n0-e5Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1jE-42-8e1"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OOZ-7Y-FFz">
+                                <rect key="frame" x="15" y="75" width="340" height="301"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3YY-1u-fw1">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjI-Ct-RMr" customClass="FlatButton" customModule="SwiftyButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="165" id="3Py-cY-Y1n"/>
+                                                    <constraint firstAttribute="height" constant="50" id="eTb-Ww-hcU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Vaccination">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" red="0.42745098040000001" green="0.72156862749999995" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFs-0p-9OX" customClass="FlatButton" customModule="SwiftyButton">
+                                                <rect key="frame" x="175" y="0.0" width="165" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="165" id="FD5-rQ-Qi5"/>
+                                                    <constraint firstAttribute="height" constant="48" id="RlU-jT-I1S"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Checkups">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" red="0.20784313730000001" green="0.68235294120000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UqR-Gm-Cet">
+                                        <rect key="frame" x="0.0" y="60" width="340" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pT-pp-7f9" customClass="FlatButton" customModule="SwiftyButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="165" id="Dny-hK-5J7"/>
+                                                    <constraint firstAttribute="height" constant="48" id="iIi-b5-FPY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Urgent Care">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" red="0.98823529409999999" green="0.8893453307006135" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nY9-QV-HCQ" customClass="FlatButton" customModule="SwiftyButton">
+                                                <rect key="frame" x="175" y="0.0" width="165" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="165" id="KxW-1z-hsU"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bFF-87-VgD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="About">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" red="0.78823529410000004" green="0.8980392157" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="AKc-pz-jC2" kind="show" id="lWT-X0-HI6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eDW-dK-eKI">
+                                        <rect key="frame" x="0.0" y="118" width="340" height="183"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rg-Re-kn3">
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="183"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="183" id="k7b-Ye-HHa"/>
+                                                    <constraint firstAttribute="width" constant="340" id="kiq-k0-btl"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OOZ-7Y-FFz" firstAttribute="leading" secondItem="cm5-n0-e5Z" secondAttribute="leading" constant="15" id="N9s-6v-fWn"/>
+                            <constraint firstItem="OOZ-7Y-FFz" firstAttribute="leading" secondItem="1eu-l1-yQT" secondAttribute="leading" constant="15" id="Reg-7e-xu4"/>
+                            <constraint firstItem="OOZ-7Y-FFz" firstAttribute="top" secondItem="cm5-n0-e5Z" secondAttribute="top" constant="75" id="eJv-2F-gA6"/>
+                            <constraint firstAttribute="bottom" secondItem="OOZ-7Y-FFz" secondAttribute="bottom" constant="482" id="gIW-R3-mVA"/>
+                            <constraint firstAttribute="trailing" secondItem="OOZ-7Y-FFz" secondAttribute="trailing" constant="20" id="no2-9H-cIz"/>
+                            <constraint firstItem="OOZ-7Y-FFz" firstAttribute="top" secondItem="1eu-l1-yQT" secondAttribute="top" constant="11" id="yaR-0f-N5y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1eu-l1-yQT"/>
+                    </scrollView>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeQ-3r-cXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5969" y="133"/>
+            <point key="canvasLocation" x="5968.8000000000002" y="132.68365817091455"/>
+        </scene>
+        <!--Text Recognition View Controller-->
+        <scene sceneID="c3m-ay-vGl">
+            <objects>
+                <viewController id="AKc-pz-jC2" customClass="TextRecognitionViewController" customModule="GlobalHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dsL-gZ-W9r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvC-x7-Fvl" customClass="FlatButton" customModule="SwiftyButton">
+                                <rect key="frame" x="115" y="212" width="165" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Cpk-jT-Jay"/>
+                                    <constraint firstAttribute="width" constant="165" id="UaL-Wq-aLP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Checkups">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.20784313730000001" green="0.68235294120000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="microphoneTapped:" destination="AKc-pz-jC2" eventType="touchUpInside" id="WWD-LO-9RN"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wt1-WF-3jq">
+                                <rect key="frame" x="77" y="351" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spW-ue-XfH" customClass="FlatButton" customModule="SwiftyButton">
+                                <rect key="frame" x="77" y="156" width="165" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Checkups">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.20784313730000001" green="0.68235294120000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="speakWords:" destination="AKc-pz-jC2" eventType="touchUpInside" id="QAS-VG-GZH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AvC-x7-Fvl" firstAttribute="top" secondItem="spW-ue-XfH" secondAttribute="bottom" constant="8" symbolic="YES" id="0jN-YG-M2G"/>
+                            <constraint firstItem="ppG-he-qHQ" firstAttribute="trailing" secondItem="wt1-WF-3jq" secondAttribute="trailing" constant="58" id="KVX-vp-uAP"/>
+                            <constraint firstItem="AvC-x7-Fvl" firstAttribute="top" secondItem="ppG-he-qHQ" secondAttribute="top" constant="148" id="LiB-h0-oFU"/>
+                            <constraint firstItem="ppG-he-qHQ" firstAttribute="trailing" secondItem="spW-ue-XfH" secondAttribute="trailing" constant="133" id="MIA-9j-36V"/>
+                            <constraint firstItem="spW-ue-XfH" firstAttribute="leading" secondItem="wt1-WF-3jq" secondAttribute="leading" id="NwJ-am-wPQ"/>
+                            <constraint firstItem="wt1-WF-3jq" firstAttribute="top" secondItem="AvC-x7-Fvl" secondAttribute="bottom" constant="91" id="dFe-iI-Rc6"/>
+                            <constraint firstItem="spW-ue-XfH" firstAttribute="top" secondItem="ppG-he-qHQ" secondAttribute="top" constant="92" id="dLI-Ni-bYs"/>
+                            <constraint firstItem="wt1-WF-3jq" firstAttribute="leading" secondItem="ppG-he-qHQ" secondAttribute="leading" constant="77" id="fhx-b6-gZT"/>
+                            <constraint firstItem="AvC-x7-Fvl" firstAttribute="leading" secondItem="ppG-he-qHQ" secondAttribute="leading" constant="115" id="t0t-zB-2tS"/>
+                            <constraint firstItem="ppG-he-qHQ" firstAttribute="bottom" secondItem="wt1-WF-3jq" secondAttribute="bottom" constant="144" id="tPu-FD-I6Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ppG-he-qHQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="microphoneButton" destination="AvC-x7-Fvl" id="9TR-GU-2oC"/>
+                        <outlet property="textView" destination="wt1-WF-3jq" id="pPE-vj-jbk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jqf-XN-7MH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6842" y="133"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ECJ-xX-Grg">

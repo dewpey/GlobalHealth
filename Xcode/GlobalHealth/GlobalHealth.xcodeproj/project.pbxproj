@@ -10,6 +10,7 @@
 		0D197CB92171AEA80018BBF8 /* RecordScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D197CB82171AEA80018BBF8 /* RecordScannerViewController.swift */; };
 		0D197CBD2171C5B10018BBF8 /* undraw_children_4rtb.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0D197CBC2171C5B10018BBF8 /* undraw_children_4rtb.svg */; };
 		0D197CBF2171D6760018BBF8 /* VaccinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D197CBE2171D6760018BBF8 /* VaccinesTableViewController.swift */; };
+		0D4D52AC2172C8E8005F8032 /* TextRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4D52AB2172C8E8005F8032 /* TextRecognitionViewController.swift */; };
 		0D64FA8221719DEC0060D97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA8121719DEC0060D97F /* AppDelegate.swift */; };
 		0D64FA8421719DEC0060D97F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA8321719DEC0060D97F /* ViewController.swift */; };
 		0D64FA8721719DEC0060D97F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D64FA8521719DEC0060D97F /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		0D197CB82171AEA80018BBF8 /* RecordScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordScannerViewController.swift; sourceTree = "<group>"; };
 		0D197CBC2171C5B10018BBF8 /* undraw_children_4rtb.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = undraw_children_4rtb.svg; sourceTree = "<group>"; };
 		0D197CBE2171D6760018BBF8 /* VaccinesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesTableViewController.swift; sourceTree = "<group>"; };
+		0D4D52AB2172C8E8005F8032 /* TextRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionViewController.swift; sourceTree = "<group>"; };
 		0D64FA7E21719DEC0060D97F /* GlobalHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D64FA8121719DEC0060D97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D64FA8321719DEC0060D97F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				0D64FA8D21719DED0060D97F /* Info.plist */,
 				0D197CB82171AEA80018BBF8 /* RecordScannerViewController.swift */,
 				0D197CBE2171D6760018BBF8 /* VaccinesTableViewController.swift */,
+				0D4D52AB2172C8E8005F8032 /* TextRecognitionViewController.swift */,
 			);
 			path = GlobalHealth;
 			sourceTree = "<group>";
@@ -194,15 +197,25 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-GlobalHealth/Pods-GlobalHealth-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${PODS_ROOT}/TwilioVoice/TwilioVoice.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVoice.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -219,6 +232,7 @@
 				0D197CB92171AEA80018BBF8 /* RecordScannerViewController.swift in Sources */,
 				0D64FA8421719DEC0060D97F /* ViewController.swift in Sources */,
 				0D197CBF2171D6760018BBF8 /* VaccinesTableViewController.swift in Sources */,
+				0D4D52AC2172C8E8005F8032 /* TextRecognitionViewController.swift in Sources */,
 				0D64FA8221719DEC0060D97F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

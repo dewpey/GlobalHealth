@@ -1,0 +1,13 @@
+
+Server/vaccine_checker.py
+Server/Tierion_check.py
+Server/raw_data.csv
+Server/medicaid.pyc
+Server/medicaid.py
+Server/BetterDoctor.py
+Server/BetterDoctor.js
+Server/__pycache__/medicaid.cpython-36.pyc
+Server/__pycache__/insuranceinfo.cpython-37.pyc
+Server/.DS_Store
+.DS_Store
+Xcode/GlobalHealth/Pods/

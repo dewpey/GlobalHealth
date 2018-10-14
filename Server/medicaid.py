@@ -45,7 +45,7 @@ class Person():
         return False
 
 
-p1 = Person(10, "New Jersey", 20000, 0)
-print('Expanded Medicaid eligibility for adult:' + str(p1.expanded_medicaid_eligibility()))
-print('CHIP eligibility: ' + str(p1.chip_eligibility()))
-print('Pregnant woman Medicaid/CHIP eligibility: ' + str(p1.pregnant_eligibility()))
+# p1 = Person(10, "New Jersey", 20000, 0)
+# print('Expanded Medicaid eligibility for adult:' + str(p1.expanded_medicaid_eligibility()))
+# print('CHIP eligibility: ' + str(p1.chip_eligibility()))
+# print('Pregnant woman Medicaid/CHIP eligibility: ' + str(p1.pregnant_eligibility()))

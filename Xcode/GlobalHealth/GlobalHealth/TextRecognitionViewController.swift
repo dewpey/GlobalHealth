@@ -143,8 +143,9 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
         
         let audioSession = AVAudioSession.sharedInstance()  //2
         do {
-            try audioSession.setCategory(AVAudioSession.Category.record, mode: AVAudioSession.Mode.measurement)
-            try AVAudioSession.sharedInstance().setActive(true)
+            try audioSession.setCategory(AVAudioSession.Category.playAndRecord, mode: .measurement)
+             try audioSession.setCategory(AVAudioSession.Category.playAndRecord, mode: .measurement, options: .defaultToSpeaker)
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         } catch {
             print("audioSession properties weren't set because of an error.")
         }
@@ -281,6 +282,11 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
         self.socket.write(string: replaced)
         //audioEngine.reset()
         previous = voiceInput;
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioEngine.stop()
     }
     
 }

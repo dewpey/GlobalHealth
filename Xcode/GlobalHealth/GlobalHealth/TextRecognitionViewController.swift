@@ -4,8 +4,9 @@ import SocketIO
 import AVFoundation
 import Starscream
 
-
 class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegate, WebSocketDelegate {
+    
+    var voiceInput = ""
     
     //var params = ROGoogleTranslateParams(
     //text:   "Here you can add your sentence you want to be translated")
@@ -30,7 +31,7 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print("Received text: \(text)")
-        speak(words: text, language: "en")
+        speak(words: text, language: "es")
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
@@ -96,14 +97,16 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
             audioEngine.stop()
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
-            microphoneButton.setTitle("Start Recording", for: .normal)
         } else {
             startRecording()
-            microphoneButton.setTitle("Stop Recording", for: .normal)
         }
     }
     
     func startRecording() {
+        
+        var timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(sendData), userInfo: nil, repeats: false)
+        
+        
         let url1 = URL(string: "https://globalhealth-blurjoe.c9users.io")
         let manager = SocketManager(socketURL: url1! )
         let defaultSocket = manager.defaultSocket
@@ -141,16 +144,30 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
         
         recognitionRequest.shouldReportPartialResults = true  //6
         
+        
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in  //7
             
-            var isFinal = false  //8
+            timer.invalidate()
+            timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(self.sendData), userInfo: nil, repeats: false)
             
+            
+            var isFinal = false  //8
             if result != nil {
                 
-                self.textView.text = result?.bestTranscription.formattedString
-                self.socket.write(string: (result?.bestTranscription.formattedString)!)
+                var formattedResult = result?.bestTranscription.formattedString
+                
+                let word = result?.bestTranscription.segments[(result?.bestTranscription.segments.count)!-1 ?? 0].substring
+                
+                print(word)
+                
+                self.socket.write(string: word!)
+                
+                self.voiceInput = formattedResult ?? ""
+                self.textView.text = formattedResult
+                
                 //9
                 isFinal = (result?.isFinal)!
+
             }
             
             if error != nil || isFinal {  //10
@@ -194,7 +211,7 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
         utterance.voice = AVSpeechSynthesisVoice(language: language)
         //speechUtterance.rate = 0.5
         //speechUtterance.pitchMultiplier = 0.25
-        //speechUtterance.volume = 0.75
+        utterance.volume = 1
         
         speechSynthesizer.speak(utterance)
     }
@@ -203,6 +220,15 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
         
         socket.write(string: "hello there!")
 
+    }
+    
+    @objc func sendData(){
+
+        print("This is a pause");
+        print(voiceInput)
+        //self.socket.write(string: voiceInput)
+        voiceInput = ""
+        //audioEngine.reset()
     }
     
 }

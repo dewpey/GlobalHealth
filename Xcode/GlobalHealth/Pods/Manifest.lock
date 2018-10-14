@@ -18,6 +18,7 @@ DEPENDENCIES:
   - FoldingCell
   - RealmSwift
   - Socket.IO-Client-Swift (~> 13.3.0)
+  - Starscream (~> 3.0.2)
   - SwiftyButton
   - SwiftyJSON (~> 4.0)
   - TwilioVoice (= 3.0.0-preview4)
@@ -45,6 +46,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TwilioVoice: 79fbc2573ef392a3a815875ad509ebfdb923ca5a
 
-PODFILE CHECKSUM: 7dd4e0ee9aee877df1383da185d1534068b401a0
+PODFILE CHECKSUM: e48a2b79fc44b6e6632d9ab0174ec200f7fc272d
 
 COCOAPODS: 1.5.3

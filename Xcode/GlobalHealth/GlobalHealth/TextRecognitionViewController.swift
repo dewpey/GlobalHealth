@@ -2,8 +2,41 @@ import UIKit
 import Speech
 import SocketIO
 import AVFoundation
+import Starscream
 
-class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegate {
+
+class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegate, WebSocketDelegate {
+    
+    //var params = ROGoogleTranslateParams(
+    //text:   "Here you can add your sentence you want to be translated")
+    
+    //let translator = ROGoogleTranslate(with: "API Key here")
+    
+        var socket: WebSocket!
+    
+    func websocketDidConnect(socket: WebSocketClient) {
+        print("websocket is connected")
+    }
+    
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        if let e = error as? WSError {
+            print("websocket is disconnected: \(e.message)")
+        } else if let e = error {
+            print("websocket is disconnected: \(e.localizedDescription)")
+        } else {
+            print("websocket disconnected")
+        }
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("Received text: \(text)")
+        speak(words: text, language: "en")
+    }
+    
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        print("Received data: \(data.count)")
+    }
+    
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var microphoneButton: UIButton!
@@ -19,6 +52,12 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var request = URLRequest(url: URL(string: "ws://globalhealth-blurjoe.c9users.io:8080")!)
+        request.timeoutInterval = 5
+        socket = WebSocket(request: request)
+        socket.delegate = self
+        socket.connect()
         
         microphoneButton.isEnabled = false
         
@@ -108,7 +147,9 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
             
             if result != nil {
                 
-                self.textView.text = result?.bestTranscription.formattedString  //9
+                self.textView.text = result?.bestTranscription.formattedString
+                self.socket.write(string: (result?.bestTranscription.formattedString)!)
+                //9
                 isFinal = (result?.isFinal)!
             }
             
@@ -159,7 +200,9 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
     }
     
     @IBAction func speakWords(_ sender: Any) {
-        self.speak(words:"Que hora es", language:"es");
+        
+        socket.write(string: "hello there!")
+
     }
     
 }

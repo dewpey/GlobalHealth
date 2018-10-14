@@ -318,7 +318,7 @@ new healthcare systems.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="pyX-bZ-sre" kind="show" id="XHi-Ia-ENd"/>
+                                    <segue destination="cWA-qd-blN" kind="show" id="IXs-2X-mfc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -418,7 +418,7 @@ new healthcare systems.</string>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QFr-6E-VG5">
-                                <rect key="frame" x="0.0" y="69.5" width="375" height="385.5"/>
+                                <rect key="frame" x="0.0" y="25.5" width="375" height="429.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="jec-Ks-O9J"/>
                                 </constraints>
@@ -978,5 +978,8 @@ new healthcare systems.</string>
     <resources>
         <image name="children" width="1112" height="811"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IXs-2X-mfc"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.16078431369999999" green="0.49019607840000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

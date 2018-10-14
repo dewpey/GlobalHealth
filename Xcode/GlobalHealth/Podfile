@@ -11,6 +11,7 @@ target 'GlobalHealth' do
     pod 'TwilioVoice', '3.0.0-preview4'
     pod 'RealmSwift'
     pod 'Socket.IO-Client-Swift', '~> 13.3.0'
+    pod 'Starscream', '~> 3.0.2'
   # Pods for GlobalHealth
 
 end

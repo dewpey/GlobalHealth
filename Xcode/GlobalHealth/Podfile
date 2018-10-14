@@ -10,6 +10,8 @@ target 'GlobalHealth' do
     pod 'FoldingCell'
     pod 'Socket.IO-Client-Swift', '~> 13.3.0'
     pod 'Starscream', '~> 3.0.2'
+    pod 'ROGoogleTranslate'
+    pod 'AZDialogView'
   # Pods for GlobalHealth
 
 end

@@ -1007,7 +1007,7 @@ Use Medscribe to live translate emergency calls, provide you location based info
             </objects>
             <point key="canvasLocation" x="4391.1999999999998" y="896.40179910044981"/>
         </scene>
-        <!--Text Recognition View Controller-->
+        <!--Title-->
         <scene sceneID="c3m-ay-vGl">
             <objects>
                 <viewController id="AKc-pz-jC2" customClass="TextRecognitionViewController" customModule="GlobalHealth" customModuleProvider="target" sceneMemberID="viewController">
@@ -1139,6 +1139,13 @@ Use Medscribe to live translate emergency calls, provide you location based info
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ppG-he-qHQ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="EgS-KP-xNa">
+                        <barButtonItem key="rightBarButtonItem" title="Language" id="9a8-yb-IMO">
+                            <connections>
+                                <action selector="openLanguageDialog:" destination="AKc-pz-jC2" id="1D3-5G-i10"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="microphoneButton" destination="vwm-im-GuV" id="XM5-3b-E1D"/>
                         <outlet property="recTextView" destination="kus-91-7GW" id="HPR-TO-mMg"/>

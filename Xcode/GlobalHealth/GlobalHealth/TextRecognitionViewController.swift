@@ -3,11 +3,15 @@ import Speech
 import SocketIO
 import AVFoundation
 import Starscream
+import SwiftyJSON
+import Alamofire
+import ROGoogleTranslate
+import AZDialogView
 
 class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegate, WebSocketDelegate {
-    
+
     var voiceInput = ""
-    
+    var language = "en"
     //var params = ROGoogleTranslateParams(
     //text:   "Here you can add your sentence you want to be translated")
     
@@ -32,7 +36,23 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print("Received text: \(text)")
         recTextView.text += text
-        speak(words: text, language: "es")
+        
+        let translator = ROGoogleTranslate()
+        translator.apiKey = "AIzaSyBXojFDvT_g2FsdAQeh3TSZYgwbLmy2WDk" // Add your API Key here
+        if(language != "en"){
+        var params = ROGoogleTranslateParams(source: "en",
+                                             target: self.language,
+                                             text:   text)
+        
+        translator.translate(params: params) { (result) in
+            print("Translation: \(result)")
+            self.speak(words: result, language: self.language)
+        }
+        }else{
+            self.speak(words: text, language: self.language)
+        }
+      
+        
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
@@ -45,7 +65,7 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var microphoneButton: UIButton!
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
+    var speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en"))!
     
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -58,7 +78,7 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
         
         super.viewDidLoad()
         
-        var request = URLRequest(url: URL(string: "ws://globalhealth-blurjoe.c9users.io:8080")!)
+        var request = URLRequest(url: URL(string: "ws://globalhealth-blurjoe.c9users.io:8080?language=en")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
@@ -150,9 +170,11 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
             if result != nil {
                 
                 var formattedResult = result?.bestTranscription.formattedString
-            
+                let word = result?.bestTranscription.segments[(result?.bestTranscription.segments.count)!-1 ?? 0].substring
                 
-                self.socket.write(string: formattedResult!)
+                print(word)
+                
+                //self.socket.write(string: formattedResult!)
                 
                 self.voiceInput = formattedResult ?? ""
                 self.textView.text = formattedResult
@@ -208,20 +230,57 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
         speechSynthesizer.speak(utterance)
     }
     
-    @IBAction func speakWords(_ sender: Any) {
+    @IBAction func openLanguageDialog(_ sender: Any) {
+        let dialog = AZDialogViewController(title: "Languages", message: "Choose your language")
+        dialog.addAction(AZDialogAction(title: "English") { (dialog) -> (Void) in
+            self.language = "en"
+            self.speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en"))!
+            dialog.dismiss()
+        })
         
-        socket.write(string: "hello there!")
-
+        dialog.addAction(AZDialogAction(title: "Spanish") { (dialog) -> (Void) in
+            self.language = "es"
+            self.speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "es"))!
+            dialog.dismiss()
+        })
+        
+        dialog.addAction(AZDialogAction(title: "Chinese (Simplified)") { (dialog) -> (Void) in
+            self.language = "zh-CN"
+            self.speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh-CN"))!
+            dialog.dismiss()
+        })
+        
+        dialog.addAction(AZDialogAction(title: "Chinese (Traditional)") { (dialog) -> (Void) in
+            self.language = "zh-TW"
+            self.speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh-TW"))!
+            dialog.dismiss()
+        })
+        
+        
+        dialog.addAction(AZDialogAction(title: "Hindi") { (dialog) -> (Void) in
+            self.language = "hi"
+            self.speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "hi"))!
+            dialog.dismiss()
+        })
+        dialog.addAction(AZDialogAction(title: "Arabic") { (dialog) -> (Void) in
+            self.speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ar"))!
+            self.language = "ar"
+            dialog.dismiss()
+        })
+        dialog.show(in: self)
     }
     
+    var previous = ""
+    
     @objc func sendData(){
-
-        print("This is a pause");
-        print(voiceInput)
         
-        self.socket.write(string: voiceInput)
-        voiceInput = ""
+        print(voiceInput)
+        print("previous \(previous)")
+        let replaced = voiceInput.replacingOccurrences(of: previous, with: "")
+        print(replaced)
+        self.socket.write(string: replaced)
         //audioEngine.reset()
+        previous = voiceInput;
     }
     
 }

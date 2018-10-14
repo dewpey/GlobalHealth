@@ -35,7 +35,7 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print("Received text: \(text)")
-        recTextView.text += text
+        recLabel.text = text
         
         let translator = ROGoogleTranslate()
         translator.apiKey = "AIzaSyBXojFDvT_g2FsdAQeh3TSZYgwbLmy2WDk" // Add your API Key here
@@ -61,9 +61,9 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
     }
     
     
-    @IBOutlet weak var recTextView: UITextView!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var recLabel: UILabel!
     @IBOutlet weak var microphoneButton: UIButton!
+    @IBOutlet weak var sendingLabel: UILabel!
     
     var speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en"))!
     
@@ -177,7 +177,7 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
                 //self.socket.write(string: formattedResult!)
                 
                 self.voiceInput = formattedResult ?? ""
-                self.textView.text = formattedResult
+                self.sendingLabel.text = formattedResult
                 
                 //9
                 isFinal = (result?.isFinal)!
@@ -208,7 +208,7 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
             print("audioEngine couldn't start because of an error.")
         }
         
-        textView.text = "Say something, I'm listening!"
+        sendingLabel.text = "Say something, I'm listening!"
         
     }
     

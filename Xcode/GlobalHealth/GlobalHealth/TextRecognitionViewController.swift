@@ -31,14 +31,17 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print("Received text: \(text)")
+        recTextView.text += text
         speak(words: text, language: "es")
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
         print("Received data: \(data.count)")
+        
     }
     
     
+    @IBOutlet weak var recTextView: UITextView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var microphoneButton: UIButton!
     
@@ -52,6 +55,7 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
     let speechSynthesizer = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         var request = URLRequest(url: URL(string: "ws://globalhealth-blurjoe.c9users.io:8080")!)
@@ -107,16 +111,7 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
         var timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(sendData), userInfo: nil, repeats: false)
         
         
-        let url1 = URL(string: "https://globalhealth-blurjoe.c9users.io")
-        let manager = SocketManager(socketURL: url1! )
-        let defaultSocket = manager.defaultSocket
-        let socket = defaultSocket
-        
-        socket.on(clientEvent: .connect) {data, ack in
-            print("socket connected")
-        }
-        
-        socket.connect()
+
         
         //
         
@@ -155,12 +150,9 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
             if result != nil {
                 
                 var formattedResult = result?.bestTranscription.formattedString
+            
                 
-                let word = result?.bestTranscription.segments[(result?.bestTranscription.segments.count)!-1 ?? 0].substring
-                
-                print(word)
-                
-                self.socket.write(string: word!)
+                self.socket.write(string: formattedResult!)
                 
                 self.voiceInput = formattedResult ?? ""
                 self.textView.text = formattedResult
@@ -226,7 +218,8 @@ class TextRecognitionViewController: UIViewController, SFSpeechRecognizerDelegat
 
         print("This is a pause");
         print(voiceInput)
-        //self.socket.write(string: voiceInput)
+        
+        self.socket.write(string: voiceInput)
         voiceInput = ""
         //audioEngine.reset()
     }
